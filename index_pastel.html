@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Invitación de Boda – Rosalinda & Enrique</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@300;400&display=swap');
+  body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('https://i.imgur.com/5SmWlwY.jpg') no-repeat center/cover;
+    background-attachment: fixed;
+    color: #4a4a4a;
+    text-align: center;
+    padding: 20px;
+    animation: fadeIn 1.5s ease;
+  }
+  @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+  h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.2em;
+    color: #ff6f91;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.9);
+    animation: fadeIn 2s ease;
+  }
+  h2 { color: #6a5acd; font-weight: normal; }
+  .section {
+    background: rgba(255, 255, 255, 0.9);
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 20px;
+    max-width: 750px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    animation: fadeInUp 1s ease;
+  }
+  @keyframes fadeInUp { from {transform: translateY(20px); opacity: 0;} to {transform: translateY(0); opacity: 1;} }
+  .button {
+    display: inline-block;
+    background: #ffb347;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  .button:hover { background: #ff6f91; }
+  .countdown {
+    font-size: 1.6em;
+    margin-top: 10px;
+    color: #6a5acd;
+    font-weight: bold;
+  }
+  .verse {
+    font-style: italic;
+    color: #ff6f91;
+    font-size: 1.2em;
+    margin: 10px;
+  }
+</style>
+</head>
+<body>
+
+<h1>💍 Rosalinda & Enrique 💍</h1>
+<p class="verse">"Por tanto, lo que Dios ha unido, que no lo separe el hombre." – Marcos 10:9</p>
+
+<audio autoplay loop hidden>
+  <source src="https://archive.org/download/athousandyearschristinaperri_202003/AThousandYearsChristinaPerri.mp3" type="audio/mpeg">
+</audio>
+
+<div class="section">
+  <h2>📅 Fecha del evento</h2>
+  <p><strong>13 de septiembre de 2025</strong></p>
+  <div id="countdown" class="countdown">Cargando...</div>
+</div>
+
+<div class="section">
+  <h2>⛪ Ceremonia Religiosa</h2>
+  <p><strong>Misa:</strong> Iglesia Fátima</p>
+  <p><strong>Hora:</strong> 4:00 p.m.</p>
+</div>
+
+<div class="section">
+  <h2>🎉 Recepción</h2>
+  <p><strong>Lugar:</strong> Palapa Azul Turquesa</p>
+  <p><strong>Hora:</strong> 5:00 p.m.</p>
+  <a class="button" href="https://maps.app.goo.gl/z3Vmw8FcjEeNu78z6?g_st=ic" target="_blank">📍 Ver ubicación</a>
+</div>
+
+<div class="section">
+  <h2>👩‍❤️‍👨 Padrinos de Velación</h2>
+  <p>Eruvey Flores Landa & Míriam Castillo de Flores</p>
+</div>
+
+<div class="section">
+  <h2>💌 Lluvia de Sobres</h2>
+ 
+</div>
+
+<div class="section">
+  <h2>📲 Confirmación</h2>
+  <p>Confirma tu asistencia al <strong>9381375767</strong></p>
+  <a class="button" href="https://wa.me/529381375767" target="_blank">💬 Confirmar por WhatsApp</a>
+</div>
+
+<script>
+const targetDate = new Date("Sep 13, 2025 16:00:00").getTime();
+const countdownEl = document.getElementById("countdown");
+setInterval(() => {
+  const now = new Date().getTime();
+  const diff = targetDate - now;
+  if (diff <= 0) {
+    countdownEl.innerHTML = "¡Hoy es el gran día!"; return;
+  }
+  const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const m = Math.floor((diff / (1000 * 60)) % 60);
+  const s = Math.floor((diff / 1000) % 60);
+  countdownEl.innerHTML = `${d} días ${h}h ${m}m ${s}s`;
+}, 1000);
+</script>
+
+</body>
+</html>
